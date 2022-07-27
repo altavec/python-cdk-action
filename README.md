@@ -1,7 +1,7 @@
 # Python CDK GitHub Action
 
-[![GitHub Issues](https://img.shields.io/github/issues/MondoPower/python-cdk-action.svg)](https://github.com/MondoPower/python-cdk-action/issues/)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/MondoPower/python-cdk-action.svg)](https://github.com/MondoPower/python-cdk-action/pulls/)
+[![GitHub Issues](https://img.shields.io/github/issues/altavec/python-cdk-action.svg)](https://github.com/altavec/python-cdk-action/issues/)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/altavec/python-cdk-action.svg)](https://github.com/altavec/python-cdk-action/pulls/)
 
 This GitHub action executes a command using the CDK CLI, from within a python Docker container, and provides the output of the command as an action output. A subset of the AWS CLI supported environment variables may be used to configure the credentials used by the CDK CLI (those being `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_DEFAULT_REGION`).
 
@@ -49,7 +49,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build cloud artifact
-        uses: MondoPower/python-cdk-action@v1
+        uses: altavec/python-cdk-action@latest
         with:
           cdk_subcommand: diff
           actions_comment: true
@@ -73,7 +73,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build cloud artifact
-        uses: MondoPower/python-cdk-action@v1
+        uses: altavec/python-cdk-action@latest
         with:
           cdk_subcommand: synth
           actions_comment: false
@@ -105,7 +105,7 @@ jobs:
           unzip cdk.zip
       
       - name: Deploy cloud artifact
-        uses: MondoPower/python-cdk-action@v1
+        uses: altavec/python-cdk-action@latest
         with:
           cdk_subcommand: deploy
           cdk_args: --app cdk.out --require-approval never
